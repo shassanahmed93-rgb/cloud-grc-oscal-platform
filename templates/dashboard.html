@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cloud GRC Dashboard</title>
+    <style>
+        body {
+            background: #0b1120;
+            color: #e5edf8;
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        .panel {
+            background: #151f32;
+            border: 1px solid #293750;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .muted { color: #94a3b8; }
+        .tag {
+            background: #263650;
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #293750;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+        }
+        .number { font-size: 28px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Cloud GRC Dashboard</h1>
+    <p class="muted">Security findings and NIST SP 800-53 control inventory</p>
+
+    <section class="cards">
+        <div class="panel">
+            <p class="muted">Total Findings</p>
+            <div class="number">{{ findings|length }}</div>
+        </div>
+        <div class="panel">
+            <p class="muted">Open Findings</p>
+            <div class="number">{{ open_count }}</div>
+        </div>
+        <div class="panel">
+            <p class="muted">High Severity</p>
+            <div class="number">{{ severity_counts["HIGH"] }}</div>
+        </div>
+        <div class="panel">
+            <p class="muted">Controls in Catalog</p>
+            <div class="number">{{ control_rows|length }}</div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>NIST Control Catalog</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Control ID</th>
+                    <th>Family</th>
+                    <th>Name</th>
+                    <th>Assessment Status</th>
+                    <th>Open Findings</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for control in control_rows %}
+                <tr>
+                    <td>{{ control.id }}</td>
+                    <td>{{ control.family }}</td>
+                    <td>
+                        <strong>{{ control.title }}</strong>
+                        <p class="muted">{{ control.description }}</p>
+                    </td>
+                    <td><span class="tag">{{ control.status }}</span></td>
+                    <td>{{ control.open_findings }}</td>
+                </tr>
+                {% else %}
+                <tr><td colspan="5">No controls found.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="panel">
+        <h2>Security Findings</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Finding</th>
+                    <th>Severity</th>
+                    <th>Resource</th>
+                    <th>Control</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for finding in findings %}
+                <tr>
+                    <td>{{ finding.title }}</td>
+                    <td>{{ finding.severity }}</td>
+                    <td>{{ finding.resource }}</td>
+                    <td><span class="tag">{{ finding.control_id }}</span></td>
+                    <td>{{ finding.status }}</td>
+                </tr>
+                {% else %}
+                <tr><td colspan="5">No findings available.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

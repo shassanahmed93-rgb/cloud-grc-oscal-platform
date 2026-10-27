@@ -1,0 +1,127 @@
+{
+  "system-security-plan": {
+    "uuid": "a19104c5-6f87-4ef3-824c-d814662bfb4a",
+    "metadata": {
+      "title": "Cloud GRC Portfolio Demonstration SSP",
+      "published": "2026-10-27T18:16:35.101357Z",
+      "last-modified": "2026-10-27T18:16:35.101357Z",
+      "version": "0.1.0",
+      "oscal-version": "1.1.2",
+      "roles": [
+        {
+          "id": "system-owner",
+          "title": "System Owner"
+        },
+        {
+          "id": "security-assessor",
+          "title": "Security Assessor"
+        }
+      ],
+      "parties": [
+        {
+          "uuid": "8c8a1649-75fb-4b79-a7f5-d0650b0b0f54",
+          "type": "organization",
+          "name": "Fictional Portfolio Organization"
+        }
+      ]
+    },
+    "import-profile": {
+      "href": "https://raw.githubusercontent.com/usnistgov/oscal-content/main/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json"
+    },
+    "system-characteristics": {
+      "system-ids": [
+        {
+          "identifier-type": "https://ietf.org/rfc/rfc4122",
+          "id": "c299be65-1e13-4b1f-8901-73b33017d3a3"
+        }
+      ],
+      "system-name": "Portfolio Cloud Journal API",
+      "description": "A portfolio demonstration system used to document security controls and illustrative assessment evidence.",
+      "system-information": {
+        "information-types": [
+          {
+            "uuid": "21bc6f44-69d9-47e0-85c1-327b2c770de5",
+            "title": "Journal API operational data",
+            "description": "Illustrative information type for API requests and journal records. Actual data classification must be verified."
+          }
+        ]
+      },
+      "security-sensitivity-level": "moderate",
+      "status": {
+        "state": "other",
+        "remarks": "Demonstration SSP. This document does not establish authorization or compliance."
+      },
+      "authorization-boundary": {
+        "description": "Illustrative boundary for a cloud-hosted API, its application components, and supporting data store."
+      },
+      "network-architecture": {
+        "description": "Illustrative cloud architecture. Actual deployed resources and network paths must be verified."
+      },
+      "data-flow": {
+        "description": "Users send API requests to the application. The application processes requests and accesses persistent storage. Actual data flows require verification."
+      }
+    },
+    "system-implementation": {
+      "users": [
+        {
+          "uuid": "1e8d1979-d024-4fd4-90e6-4858598022e6",
+          "title": "API User",
+          "description": "A hypothetical user who sends requests to the API.",
+          "role-ids": [
+            "system-owner"
+          ]
+        }
+      ],
+      "components": [
+        {
+          "uuid": "624eb954-63bf-439f-9261-028ce5b49c80",
+          "type": "software",
+          "title": "Journal API",
+          "description": "Python API application. Deployment configuration must be verified against the live environment.",
+          "status": {
+            "state": "operational"
+          }
+        },
+        {
+          "uuid": "7da8e3e1-33a5-4b39-a6b9-536ef43a4413",
+          "type": "service",
+          "title": "Persistent Data Store",
+          "description": "Illustrative database component. The actual database engine and hosting configuration must be verified.",
+          "status": {
+            "state": "other"
+          }
+        }
+      ]
+    },
+    "control-implementation": {
+      "description": "Initial control documentation. The statements below are assessment placeholders, not evidence of compliance.",
+      "implemented-requirements": [
+        {
+          "uuid": "331e21d9-a024-4fe0-bec4-e5a541975a82",
+          "control-id": "ac-6",
+          "remarks": "Assessment status: not assessed. Review access permissions and verify least privilege."
+        },
+        {
+          "uuid": "9c643c69-0c55-4550-be33-f094ced671be",
+          "control-id": "au-2",
+          "remarks": "Assessment status: not assessed. Identify required audit events and verify logging coverage."
+        },
+        {
+          "uuid": "65133653-afb6-4cb7-8207-d51ff6f9c891",
+          "control-id": "ca-7",
+          "remarks": "Assessment status: not assessed. Define continuous monitoring responsibilities and evidence."
+        },
+        {
+          "uuid": "28725d70-bb3a-4e53-95ac-e37c89a56f9b",
+          "control-id": "cm-6",
+          "remarks": "Assessment status: not assessed. Document and verify security configuration settings."
+        },
+        {
+          "uuid": "ebbad636-f2c5-43cb-9544-f89a8fdc02ee",
+          "control-id": "sc-8",
+          "remarks": "Assessment status: not assessed. Verify protections for information in transit."
+        }
+      ]
+    }
+  }
+}

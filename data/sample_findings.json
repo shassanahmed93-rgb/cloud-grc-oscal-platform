@@ -1,0 +1,46 @@
+[
+  {
+    "id": "F-001",
+    "title": "S3 bucket encryption not verified",
+    "severity": "HIGH",
+    "resource": "sample-journal-storage",
+    "control_id": "SC-8",
+    "status": "OPEN",
+    "evidence": "Encryption configuration requires verification.",
+    "likelihood": 3,
+    "impact": 4
+  },
+  {
+    "id": "F-002",
+    "title": "Cloud audit logging review required",
+    "severity": "MEDIUM",
+    "resource": "sample-audit-logging",
+    "control_id": "AU-2",
+    "status": "OPEN",
+    "evidence": "Audit event coverage has not been assessed.",
+    "likelihood": 3,
+    "impact": 3
+  },
+  {
+    "id": "F-003",
+    "title": "Access permissions review pending",
+    "severity": "HIGH",
+    "resource": "sample-api-identity",
+    "control_id": "AC-6",
+    "status": "OPEN",
+    "evidence": "Least-privilege permissions require review.",
+    "likelihood": 4,
+    "impact": 4
+  },
+  {
+    "id": "F-004",
+    "title": "Configuration review completed",
+    "severity": "LOW",
+    "resource": "sample-api-config",
+    "control_id": "CM-6",
+    "status": "RESOLVED",
+    "evidence": "Sample remediation record for demonstration.",
+    "likelihood": 1,
+    "impact": 2
+  }
+]

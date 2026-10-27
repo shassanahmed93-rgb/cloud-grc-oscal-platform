@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Test and lint caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local OSCAL tooling configuration
+.trestle/config.ini
+
+# Backup files
+*.bak
+
+# Generated OSCAL tooling files
+.trestle/cache/
+dist/
+
+# Local OSCAL workspace directories
+assessment-plans/
+assessment-results/
+catalogs/
+component-definitions/
+mapping-collections/
+plan-of-action-and-milestones/
+profiles/
