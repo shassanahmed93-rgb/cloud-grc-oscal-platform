@@ -161,3 +161,20 @@ Do not add credentials, access keys, real customer data, or sensitive production
 Built as a hands-on portfolio project focused on cloud GRC, risk prioritization, security controls, Python, Flask, and OSCAL-style security documentation.
 
 - GitHub: <https://github.com/shassanahmed93-rgb>
+
+## 📸 Dashboard Preview
+
+The Cloud GRC platform provides an interactive view of synthetic security findings, risk prioritization, and control mappings. The data is for demonstration purposes and does not represent verified production compliance evidence.
+
+### Risk Dashboard
+
+![Cloud GRC Dashboard](screenshots/dashboard.png)
+
+### Findings and Control Catalog
+
+![Findings and Controls](screenshots/findings-and-controls.png)
+
+### Additional Findings View
+
+![Additional Findings View](screenshots/findings-and-controls2.png)
+
