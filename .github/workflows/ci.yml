@@ -34,4 +34,7 @@ jobs:
         run: python -m pytest -q
 
       - name: Run Ruff
-        run: python -m ruff check app tests
+        run: python -m ruff check app test
+        
+      - name: Validate OSCAL SSP
+        run: python scripts/validate_oscal.py
